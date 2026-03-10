@@ -1,27 +1,27 @@
 {
     "hosts": {
         "h1": {
-            "ip": "fc00:1::1/64",
+            "ip": "2001:1::1/64",
             "mac": "08:00:00:00:01:11",
             "commands": [
-                "ip -6 route add default via fc00:1::10 dev eth0",
-                "ip -6 neigh add fc00:1::10 lladdr 08:00:00:00:01:00 dev eth0"
+                "ip -6 route add default via 2001:1::10 dev eth0",
+                "ip -6 neigh add 2001:1::10 lladdr 08:00:00:00:01:00 dev eth0"
             ]
         },
         "h2": {
-            "ip": "fc00:2::2/64",
+            "ip": "2001:2::2/64",
             "mac": "08:00:00:00:02:22",
             "commands": [
-                "ip -6 route add default via fc00:2::20 dev eth0",
-                "ip -6 neigh add fc00:2::20 lladdr 08:00:00:00:02:00 dev eth0"
+                "ip -6 route add default via 2001:2::20 dev eth0",
+                "ip -6 neigh add 2001:2::20 lladdr 08:00:00:00:02:00 dev eth0"
             ]
         },
         "h3": {
-            "ip": "fc00:3::3/64",
+            "ip": "2001:3::3/64",
             "mac": "08:00:00:00:03:33",
             "commands": [
-                "ip -6 route add default via fc00:3::30 dev eth0",
-                "ip -6 neigh add fc00:3::30 lladdr 08:00:00:00:03:00 dev eth0"
+                "ip -6 route add default via 2001:3::30 dev eth0",
+                "ip -6 neigh add 2001:3::30 lladdr 08:00:00:00:03:00 dev eth0"
             ]
         }
     },
