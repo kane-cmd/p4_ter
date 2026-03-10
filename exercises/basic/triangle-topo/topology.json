@@ -1,27 +1,27 @@
 {
     "hosts": {
         "h1": {
-            "ip": "10.0.1.1/24",
+            "ip": "fc00:1::1/64",
             "mac": "08:00:00:00:01:11",
             "commands": [
-                "route add default gw 10.0.1.10 dev eth0",
-                "arp -i eth0 -s 10.0.1.10 08:00:00:00:01:00"
+                "ip -6 route add default via fc00:1::10 dev eth0",
+                "ip -6 neigh add fc00:1::10 lladdr 08:00:00:00:01:00 dev eth0"
             ]
         },
         "h2": {
-            "ip": "10.0.2.2/24",
+            "ip": "fc00:2::2/64",
             "mac": "08:00:00:00:02:22",
             "commands": [
-                "route add default gw 10.0.2.20 dev eth0",
-                "arp -i eth0 -s 10.0.2.20 08:00:00:00:02:00"
+                "ip -6 route add default via fc00:2::20 dev eth0",
+                "ip -6 neigh add fc00:2::20 lladdr 08:00:00:00:02:00 dev eth0"
             ]
         },
         "h3": {
-            "ip": "10.0.3.3/24",
+            "ip": "fc00:3::3/64",
             "mac": "08:00:00:00:03:33",
             "commands": [
-                "route add default gw 10.0.3.30 dev eth0",
-                "arp -i eth0 -s 10.0.3.30 08:00:00:00:03:00"
+                "ip -6 route add default via fc00:3::30 dev eth0",
+                "ip -6 neigh add fc00:3::30 lladdr 08:00:00:00:03:00 dev eth0"
             ]
         }
     },
