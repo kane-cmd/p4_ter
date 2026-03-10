@@ -1,0 +1,65 @@
+{
+    "hosts": {
+        "h1": {
+            "ip": "fc00:1::1/64",
+            "mac": "08:00:00:00:01:11",
+            "commands": [
+                "ip -6 route add default via fc00:1::10 dev eth0",
+                "ip -6 neigh add fc00:1::10 lladdr 08:00:00:00:01:00 dev eth0"
+            ]
+        },
+        "h2": {
+            "ip": "fc00:2::2/64",
+            "mac": "08:00:00:00:02:22",
+            "commands": [
+                "ip -6 route add default via fc00:2::20 dev eth0",
+                "ip -6 neigh add fc00:2::20 lladdr 08:00:00:00:02:00 dev eth0"
+            ]
+        },
+        "h3": {
+            "ip": "fc00:3::3/64",
+            "mac": "08:00:00:00:03:33",
+            "commands": [
+                "ip -6 route add default via fc00:3::30 dev eth0",
+                "ip -6 neigh add fc00:3::30 lladdr 08:00:00:00:03:00 dev eth0"
+            ]
+        }
+    },
+    "switches": {
+        "s1": {
+            "runtime_json": "triangle-topo/s1-runtime.json"
+        },
+        "s2": {
+            "runtime_json": "triangle-topo/s2-runtime.json"
+        },
+        "s3": {
+            "runtime_json": "triangle-topo/s3-runtime.json"
+        }
+    },
+    "links": [
+        [
+            "h1",
+            "s1-p1"
+        ],
+        [
+            "s1-p2",
+            "s2-p2"
+        ],
+        [
+            "s1-p3",
+            "s3-p2"
+        ],
+        [
+            "s3-p3",
+            "s2-p3"
+        ],
+        [
+            "h2",
+            "s2-p1"
+        ],
+        [
+            "h3",
+            "s3-p1"
+        ]
+    ]
+}
